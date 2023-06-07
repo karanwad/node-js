@@ -12,6 +12,14 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 // Your endpoints here..
+app.get('/message', cors(corsOptions), async (req, res) => { 
+    // const result = await mySqlProxy.<YOUR FUNCTION HERE>
+    // const id = req.params['id']                  // Read parameters from URL.
+    // const personType = req.query['personType']   // Read query parameters from URL.
+    // const body = req.body                        // Read request body.
+    // res.send(<YOUR OBJECT HERE>)
+    res.send({message: 'Hello World'})
+})
 
 
 app.listen(PORT, () => {

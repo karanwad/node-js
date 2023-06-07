@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "397a4aef-b65c-4755-87fe-5007173a845b",
+		"name": "Node Exercizes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27838985"
+	},
+	"item": [
+		{
+			"name": "Exercize 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"message"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
