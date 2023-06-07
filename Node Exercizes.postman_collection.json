@@ -24,6 +24,26 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Exercise 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/cars/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"cars",
+						"6"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

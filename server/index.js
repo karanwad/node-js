@@ -1,5 +1,6 @@
 const cors = require('cors')
 const express = require('express')
+const promisePool = require('../PromisePool').pool; 
 const { body, check, param, validationResult } = require('express-validator')
 
 const PORT = 80
@@ -20,6 +21,18 @@ app.get('/message', cors(corsOptions), async (req, res) => {
     // res.send(<YOUR OBJECT HERE>)
     res.send({message: 'Hello World'})
 })
+
+// Ex2 Cars
+app.get('/cars/:id', cors(corsOptions), async (req, res) => {
+    const carId = req.params['id'];
+    // const car = await mySqlProxy.selectCarById(carId);
+    const result = await promisePool.query(`SELECT * FROM car WHERE car_id = ?`, [carId])
+    // console.log(result)
+    // const body = result[0]
+    // res.send(body);
+    const body = result[0]
+    res.send(body);
+});
 
 
 app.listen(PORT, () => {
