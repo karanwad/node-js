@@ -52,6 +52,33 @@
 				"header": []
 			},
 			"response": []
+		},
+		{
+			"name": "Exercise 4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"make\" : \"Toyota\",\r\n    \"model\": \"Corolla\",\r\n    \"color\" : \"Gray\",\r\n    \"price\" : 30000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

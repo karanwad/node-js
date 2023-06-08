@@ -42,6 +42,46 @@ app.get('/cars', cors(corsOptions), async (req, res) => {
     res.send(body);
 }); 
 
+//Ex4 Post Car
+
+app.post('/cars', cors(corsOptions), async (req, res) => {
+
+    //Destructuring req.body
+
+    const { make, model, color, price } = req.body;
+
+    //Query to insert car on table
+
+    const insertCar = await promisePool.query(
+
+        `INSERT INTO car (make, model, price, color) VALUES (?,?,?,?)`,
+
+        [make, model, price, color]
+
+    );
+
+    //Getting the Id from the newly inserted item
+
+    const carId = insertCar[0].insertId;
+
+
+
+
+    // Query to return the newly inserted item
+
+    const [carInserted] = await promisePool.query(
+
+        `SELECT * FROM car WHERE car_id = ? `,
+
+        [carId]
+
+    );
+
+    res.send(carInserted);
+
+});
+
+
 
 app.listen(PORT, () => {
     console.log(`Express web API running on port: ${PORT}.`)
