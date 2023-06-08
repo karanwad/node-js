@@ -79,6 +79,33 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Exercise 5",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"carId\" : 1,\r\n    \"make\": \"Mazda\",\r\n    \"model\" : \"Mazda6\",\r\n    \"price\" : 30000,\r\n    \"color\" : \"silver\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

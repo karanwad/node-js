@@ -81,6 +81,19 @@ app.post('/cars', cors(corsOptions), async (req, res) => {
 
 });
 
+//Ex5 Put Car
+
+app.put('/cars/', cors(corsOptions), async (req, res) =>{
+
+    const {model, make, color, price, car_id} = req.body;
+
+    const result = await promisePool.query("UPDATE car set model = ?, make = ?, color = ?, price = ? where car_id = ?",
+
+    [model, make, color, price, car_id]);
+
+    res.send(result[0])
+
+})
 
 
 app.listen(PORT, () => {
