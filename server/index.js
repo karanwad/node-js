@@ -34,6 +34,14 @@ app.get('/cars/:id', cors(corsOptions), async (req, res) => {
     res.send(body);
 });
 
+// Ex3 Get Car For Make
+app.get('/cars', cors(corsOptions), async (req, res) => {
+    const carMake = req.query['make'];
+    const [result] = await promisePool.query(`SELECT * FROM car WHERE make =?`, [carMake,]);
+    const body = result
+    res.send(body);
+}); 
+
 
 app.listen(PORT, () => {
     console.log(`Express web API running on port: ${PORT}.`)

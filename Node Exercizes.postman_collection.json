@@ -44,6 +44,14 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Exercise 3",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
